@@ -18,6 +18,13 @@ const addNewProduct = async (name: string, amount: string) => {
   return newProduct;
 };
 
+const getAll = async () => {
+  const [products] = await connection.query('SELECT * FROM Trybesmith.Products;');
+
+  return products;
+};
+
 export default {
   addNewProduct,
+  getAll,
 };
